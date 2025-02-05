@@ -18,14 +18,15 @@
       <h2 class="govuk-heading-l">About</h2>
       <p class="govuk-body">Here are some hard coded dates that we will turn into
         dynamic dates. We will also do some calculations on these dates.</p>
-      <p class="govuk-body">Pull this branch to see the end product</p>
+      <p class="govuk-body"><a href="https://github.com/titlescreen/xgov-date-filter-demo/tree/filters-added-and-examples-made" class="govuk-link" rel="noreferrer noopener" target="_blank">
+        Pull this branch to see the end product</a></p>
       <h2 class="govuk-heading-l">Dates examples</h2>
-      <p class="govuk-body">Today's date is 5 February 2025</p>
-      <p class="govuk-body">Tomorrow's date is 6 February 2025</p>
-      <p class="govuk-body">Yesterday's date is 5 February 2025</p>
-      <p class="govuk-body">In 1 week it will be 12 February 2025</p>
-      <p class="govuk-body">In 2 months it will be 12 April 2025</p>
-      <p class="govuk-body">In 2.5 months it will be 30 April 2025</p>
+      <p class="govuk-body">Today's date is {{ "today" | govukDate }}</p>
+      <p class="govuk-body">Tomorrow's date is {{ "today" | duration(1) | govukDate }}</p>
+      <p class="govuk-body">Yesterday's date is {{ "today" | duration(-1) | govukDate }}</p>
+      <p class="govuk-body">In 1 week it will be {{ "today" | duration(1 , "week") | govukDate }}</p>
+      <p class="govuk-body">In 2 months it will be {{ "today" | duration(2, "months") | govukDate }}</p>
+      <p class="govuk-body">In 2.5 months it will be {{ "today" | duration(2.5, "months") | govukDate }}</p>
       </div>
   </div>
 {% endblock %}
